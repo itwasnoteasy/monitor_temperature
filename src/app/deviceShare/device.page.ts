@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import * as HighCharts from 'highcharts';
+import { AuthService } from '../services/auth.service';
+import { FirebaseService } from '../services/firebase.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-device',
@@ -7,116 +10,91 @@ import * as HighCharts from 'highcharts';
   styleUrls: ['device.page.scss'],
 })
 export class DevicePage {
-  constructor() { }
+  private deviceAnalysisData: Observable<any>;
+  private categories = [];
+  private category1Hours = [];
+  private category1Data = [];
+  private category2Data = [];
+  private category3Hours = [];
+  private category3Data = [];
+  private category4Hours = [];
+  private category4Data = [];
+  private category5Hours = [];
+  private category5Data = [];
+  private applianceData = [];
+
+  constructor(private authService: AuthService, 
+    private firebaseService: FirebaseService) {}
 
   ionViewDidEnter() {
-    this.plotSimpleDonutChart();
-    this.plotSemiDonutChart();
+    this.authService.doLogin().then(result => {
+      this.deviceAnalysisData = this.firebaseService.getDeviceAnalysisData();
+      console.log(result);
+      this.deviceAnalysisData.subscribe(deviceData => {
+        this.categories = deviceData[0];
+        this.category1Hours = deviceData[1];
+        this.category1Data = deviceData[2];
+        this.category2Data = deviceData[3];
+        this.category3Hours = deviceData[4];
+        this.category3Data = deviceData[5];
+        this.category4Hours = deviceData[6];
+        this.category4Data = deviceData[7];
+        this.category5Hours = deviceData[8];
+        this.category5Data = deviceData[9];
+        this.applianceData = deviceData[10];
+        this.plotSimpleDonutChart();
+        this.plotSemiDonutChart();
+      });
+    });
   }
 
   plotSimpleDonutChart() {
     var colors = HighCharts.getOptions().colors,
-      categories = [
-        'Microwave',
-        'TV',
-        'Dishwasher',
-        'Light Bulbs',
-        'Other'
-      ],
+      categories = this.categories,
       data = [
         {
           y: 42,
           color: colors[2],
           drilldown: {
-            name: 'Microwave',
-            categories: [
-              '8-9 AM',
-              '9-10 AM',
-              '10-3 PM',
-              '3-5 PM',
-              '5-8 PM',
-              '8-11 PM'
-            ],
-            data: [
-              5.5,
-              2.5,
-              11.4,
-              4.6,
-              6.25,
-              11.75
-             ]
+            name: this.categories[0],
+            categories: this.category1Hours,
+            data: this.category1Data
           }
         },
         {
           y: 18,
           color: colors[1],
           drilldown: {
-            name: 'TV',
-            categories: [
-              '8-9 AM',
-              '9-10 AM',
-              '10-3 PM',
-              '3-5 PM',
-              '5-8 PM',
-              '8-11 PM',
-            ],
-            data: [
-              0.1,
-              2.3,
-              3.7,
-              1.6,
-              3.4,
-              6.9
-            ]
+            name: this.categories[1],
+            categories: this.category1Hours,
+            data: this.category2Data
           }
         },
         {
           y: 16,
           color: colors[0],
           drilldown: {
-            name: 'Dishwasher',
-            categories: [
-              '10-3 PM',
-              '3-5 PM',
-              '5-8 PM',
-              '8-11 PM',
-            ],
-            data: [
-              1.2,
-              4.8,
-              3.8,
-              6.2
-            ]
+            name: this.categories[2],
+            categories: this.category3Hours,
+            data: this.category3Data
           }
         },
         {
           y: 12,
           color: colors[3],
           drilldown: {
-            name: 'LightBulbs',
-            categories: [
-              '6AM-Noon',
-              '12-5 PM',
-              '5-11 PM'
-            ],
-            data: [
-              1.7,
-              2,
-              8.3
-            ]
+            name: this.categories[3],
+            categories: this.category4Hours,
+            data: this.category4Data
           }
         },
         {
           y: 13,
           color: colors[6],
           drilldown: {
-            name: 'Other',
-            categories: [
-              'Other'
-            ],
-            data: [
-              13
-            ]
+            name: this.categories[4],
+            categories: this.category5Hours,
+            data: this.category5Data
           }
         }
       ],
@@ -160,7 +138,7 @@ export class DevicePage {
         text: 'Device Share Usage'
       },
       subtitle: {
-        text: 'Source: <a href="http://google.com/search?q=sample data" target="_blank">sampledata</a>'
+        text: 'Source: <a href="http://google.com/search?q=firebase DB" target="_blank">firebase DB</a>'
       },
       plotOptions: {
         pie: {
@@ -255,20 +233,7 @@ export class DevicePage {
         type: 'pie',
         name: 'Appliances share',
         innerSize: '50%',
-        data: [
-          ['Microwave', 58.9],
-          ['Dishwasher', 13.29],
-          ['Refrigerator', 13],
-          ['TV', 3.78],
-          ['Light Bulbs', 3.42],
-          {
-            name: 'Other',
-            y: 7.61,
-            dataLabels: {
-              enabled: false
-            }
-          }
-        ]
+        data: this.applianceData
       }]
     });
   }

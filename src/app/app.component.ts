@@ -16,22 +16,22 @@ export class AppComponent {
       icon: 'pulse'
     },
     {
-      title: 'Monthly Analysis',
-      url: '/bar',
-      icon: 'stats'
-    },
-    {
-      title: 'Electricity Analysis',
-      url: '/pie',
-      icon: 'bulb'
-    },
-    {
       title: 'Device Analysis',
       url: '/device',
       icon: 'pie'
     },
     {
-      title: 'Yearly',
+      title: 'Energy Consumption',
+      url: '/pie',
+      icon: 'bulb'
+    },
+    {
+      title: 'Monthly Analysis',
+      url: '/bar',
+      icon: 'stats'
+    },
+    {
+      title: 'Yearly Average',
       url: '/scatter',
       icon: 'grid'
     }

@@ -35,6 +35,10 @@ export class FirebaseService {
     return this.afDB.list('temperature/Sample').valueChanges();
   }
 
+  getDeviceAnalysisData() {
+    return this.afDB.list('deviceAnalysisData').valueChanges();
+  }
+
   getTemperature(){
     return new Promise<any>((resolve, reject) => {
       this.afAuth.user.subscribe( x => {

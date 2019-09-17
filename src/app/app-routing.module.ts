@@ -12,24 +12,20 @@ const routes: Routes = [
     loadChildren: './home/home.module#HomePageModule'
   },
   {
-    path: 'bar',
-    loadChildren: './bar/bar.module#BarPageModule'
+    path: 'device',
+    loadChildren: './deviceShare/device.module#DevicePageModule'
   },
   {
     path: 'pie',
     loadChildren: './pie/pie.module#PiePageModule'
   },
   {
-    path: 'device',
-    loadChildren: './deviceShare/device.module#DevicePageModule'
+    path: 'bar',
+    loadChildren: './bar/bar.module#BarPageModule'
   },
   {
     path: 'scatter',
     loadChildren: './scatter/scatter.module#ScatterPageModule'
-  },
-  {
-    path: 'dynamic',
-    loadChildren: './dynamic/dynamic.module#DynamicPageModule'
   }
 ];
 

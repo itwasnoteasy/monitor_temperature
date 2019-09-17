@@ -11,25 +11,13 @@ import { Observable } from 'rxjs';
 })
 export class HomePage {
 
-  private tempReadings: any;
   private highChart: any;
-  private readTemperature: Observable<any>;
   private sampleData: Observable<any>;
 
   constructor(private authService: AuthService, 
               private firebaseService: FirebaseService) {}
 
   ionViewDidEnter() {
-    // this.authService.doLogin().then(result => {
-    //   this.readTemperature = this.firebaseService.readTemperature();
-    //   console.log(result);
-    //   this.readTemperature.subscribe(tempArray => {
-    //     console.log(tempArray);
-    //     const x = tempArray[0].created_ts;
-    //     const y = tempArray[0].value;
-    //     this.highChart.series[0].addPoint([x.seconds * 1000, y], true, true);
-    //   });
-    // });
     this.plotDynamicSplineChart();
 
     this.authService.doLogin().then(result => {
@@ -51,21 +39,7 @@ export class HomePage {
       chart: {
         type: 'spline',
         animation: true, // don't animate in old IE
-        marginRight: 10,
-        // events: {
-        //   load: function () {
-        //     // set up the updating of the chart each second
-        //     let series = this.series[0];
-        //     let humiditySeries = this.series[1];
-        //     setInterval(function () {
-        //       var x = (new Date()).getTime(), // current time
-        //         y = 22+2*Math.random(),
-        //         z = 64+4*Math.random();
-        //       series.addPoint([x, y], true, true);
-        //       humiditySeries.addPoint([x, z], true , true);
-        //     }, 2000);
-        //   }
-        // }
+        marginRight: 10
       },
 
       time: {
@@ -73,7 +47,7 @@ export class HomePage {
       },
 
       title: {
-        text: 'Live Temperature'
+        text: 'Monitor Temperature/Humidity'
       },
       xAxis: {
         type: 'datetime',
@@ -81,7 +55,7 @@ export class HomePage {
       },
       yAxis: {
         title: {
-          text: 'Temperature'
+          text: ''
         },
         plotLines: [{
           value: 0,

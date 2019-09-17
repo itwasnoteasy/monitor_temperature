@@ -24,7 +24,7 @@ export class PiePage {
         type: 'pie'
       },
       title: {
-        text: 'Electricity consumption'
+        text: 'Energy consumption'
       },
       tooltip: {
         pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
