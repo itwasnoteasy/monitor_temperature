@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "livetemperature",
     "public": "www",
     "ignore": [
       "firebase.json",
