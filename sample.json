@@ -14,36 +14,36 @@
         "optionName":"Technical Support",
         "description":"Mobile device and wireless services",
         "optionValue": 1,
-        "pause": ",,"
+        "pause": ",,",
         "ivrOptions": [
          {
           "optionName":"Device Support",
           "description":"Help with phone, tablets and other devices",
           "optionValue": 1,
-          "pause": ",,"
+          "pause": ",,",
           "ivrOptions": [{
             "optionName":"Phone Support",
             "description":"Help with phones",
             "optionValue": 1,
-            "pause": ",,"
+            "pause": ",,",
             "ivrOptions": []
            },{
             "optionName":"Tablet Support",
             "description":"Help with tablets",
             "optionValue": 2,
-            "pause": ",,"
+            "pause": ",,",
             "ivrOptions": []
            },{
             "optionName":"Smart Watch Support",
             "description":"Help with smart watches",
             "optionValue": 3,
-            "pause": ",,"
+            "pause": ",,",
             "ivrOptions": []
            },{
             "optionName":"Connected Home Support",
             "description":"Help with IoT devices at home",
             "optionValue": 4,
-            "pause": ",,"
+            "pause": ",,",
             "ivrOptions": []
            }]
          },
@@ -51,7 +51,7 @@
           "optionName":"Service Support",
           "description":"Help related to wireless service",
           "optionValue": 2,
-          "pause": ",,"
+          "pause": ",,",
           "ivrOptions": []
          }
         ]
@@ -59,19 +59,19 @@
         "optionName":"Billing Support",
         "description":"Billing questions on wireless account",
         "optionValue": 2,
-        "pause": ",,"
+        "pause": ",,",
         "ivrOptions": []
        },{
         "optionName":"Order Status",
         "description":"Check status of your order",
         "optionValue": 3,
-        "pause": ",,"
+        "pause": ",,",
         "ivrOptions": []
        },{
         "optionName":"Contact Agent",
         "description":"Connect to Verizon wireless representative",
         "optionValue": 4,
-        "pause": ",,"
+        "pause": ",,",
         "ivrOptions": []
        }
       ]
