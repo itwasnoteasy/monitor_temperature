@@ -1,0 +1,12 @@
+ [{
+      "name": "Best Buy",
+      "phoneNumber": "8585876379",
+      "location": "La Jolla Village Square",
+      "distance": "4.7m"
+},
+ {
+      "name": "Least Buy",
+      "phoneNumber": "8585876379",
+      "location": "La Jolla Village Square",
+      "distance": "4.7m"
+}]
