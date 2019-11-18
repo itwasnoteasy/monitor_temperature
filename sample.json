@@ -1,10 +1,12 @@
  [{
+  "id": "bestbuy1",
       "name": "Best Buy",
       "phoneNumber": "858-587-6379",
       "location": "La Jolla Village Square",
       "distance": "4.7"
 },
  {
+    "id": "verizon1",
       "name": "Verizon Customer",
       "phoneNumber": "1 (800) 922-0204",
       "location": "Telecommunications company",
