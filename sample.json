@@ -11,22 +11,26 @@
       "phoneNumber": "1 (800) 922-0204",
       "location": "Telecommunications company",
       "distance": "3.1",
+      "nextLevel": 1,
       "ivrOptions":[
        {
         "optionName":"Technical Support",
         "description":"Mobile device and wireless services",
         "optionValue": 1,
+        "nextLevel": 2,
         "pause": ",,",
         "ivrOptions": [
          {
           "optionName":"Device Support",
           "description":"Help with phone, tablets and other devices",
           "optionValue": 1,
+          "nextLevel": 3,
           "pause": ",,",
           "ivrOptions": [{
             "optionName":"Phone Support",
             "description":"Help with phones",
             "optionValue": 1,
+            "nextLevel": 4,
             "pause": ",,",
             "ivrOptions": []
            },{
