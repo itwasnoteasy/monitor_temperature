@@ -3,7 +3,8 @@
       "name": "Best Buy",
       "phoneNumber": "858-587-6379",
       "location": "La Jolla Village Square",
-      "distance": "4.7"
+      "distance": "4.7",
+      "ivrOptions": []
 },
  {
     "id": "0bdae3a7-917b-4fef-a11b-f37785a06cea",
