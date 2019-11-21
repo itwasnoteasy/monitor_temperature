@@ -17,6 +17,7 @@
        {
         "optionName":"Technical Support",
         "description":"Mobile device and wireless services",
+        "phoneNumber": "1 (800) 922-0204,,1",
         "optionValue": 1,
         "nextLevel": 2,
         "pause": ",,",
@@ -24,12 +25,14 @@
          {
           "optionName":"Device Support",
           "description":"Help with phone, tablets and other devices",
+          "phoneNumber": "1 800 922-0204,,1,,1",
           "optionValue": 1,
           "nextLevel": 3,
           "pause": ",,",
           "ivrOptions": [{
             "optionName":"Phone Support",
             "description":"Help with phones",
+            "phoneNumber": "1 800 922-0204,,1,,1,,1",
             "optionValue": 1,
             "nextLevel": 4,
             "pause": ",,",
@@ -37,18 +40,21 @@
            },{
             "optionName":"Tablet Support",
             "description":"Help with tablets",
+            "phoneNumber": "1 800 922-0204,,1,,1,,2",
             "optionValue": 2,
             "pause": ",,",
             "ivrOptions": []
            },{
             "optionName":"Smart Watch Support",
             "description":"Help with smart watches",
+            "phoneNumber": "1 800 922-0204,,1,,1,,3",
             "optionValue": 3,
             "pause": ",,",
             "ivrOptions": []
            },{
             "optionName":"Connected Home Support",
             "description":"Help with IoT devices at home",
+            "phoneNumber": "1 800 922-0204,,1,,1,,4",
             "optionValue": 4,
             "pause": ",,",
             "ivrOptions": []
